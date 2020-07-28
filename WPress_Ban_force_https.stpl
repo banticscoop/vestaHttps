@@ -8,10 +8,23 @@ server {
     error_log   /var/log/nginx/domains/%domain%.error.log error;
 
     ssl         on;
+
     ssl_certificate      %ssl_pem%;
     ssl_certificate_key  %ssl_key%;
 
+    location = /favicon.ico {
+        log_not_found off;
+        access_log off;
+    }
+
+    location = /robots.txt {
+        allow all;
+        log_not_found off;
+        access_log off;
+    }
+
     location / {
+        try_files $uri $uri/ /index.php?$args;
 
         location ~* ^.+\.(jpeg|jpg|png|gif|bmp|ico|svg|css|js)$ {
             expires     max;
