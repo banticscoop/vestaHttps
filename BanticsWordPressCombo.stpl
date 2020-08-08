@@ -71,9 +71,19 @@ server {
 
 # phpmyadmin configuration
 server {
-    listen 8085;
-    server_name _;
+    listen %ip%:8085 ssl;
+    server_name %domain_idn% %alias_idn%;
+    
+    index       index.php;
+    access_log  /var/log/nginx/domains/%domain%.log combined;
+    access_log  /var/log/nginx/domains/%domain%.bytes bytes;
+    error_log   /var/log/nginx/domains/%domain%.error.log error;
 
+    ssl         on;
+
+    ssl_certificate      %ssl_pem%;
+    ssl_certificate_key  %ssl_key%;
+    
     location /phpmyadmin {
         alias /usr/share/phpmyadmin/;
         
