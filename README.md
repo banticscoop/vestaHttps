@@ -36,7 +36,7 @@ git clone https://github.com/banticscoop/vestaHttps.git
 
 sudo cp vestaHttps/*.*tpl /usr/local/vesta/data/templates/web/nginx/php-fpm/
 
-sudo service vesta restart
+sudo service vesta restart 
 
 Con esto deberíamos poder elegir en los distintos dominios, la plantilla el cuestión.
 
