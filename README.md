@@ -12,7 +12,7 @@ Esta plantilla intenta cubrir las siguientes características, que vemos general
 
 git clone https://github.com/banticscoop/vestaHttps.git
 
-sudo cp vestaHttps/WPress_Ban_force_https.* /usr/local/vesta/data/templates/web/nginx/php-fpm/
+sudo cp vestaHttps/BanticsWordPressCombo.* /usr/local/vesta/data/templates/web/nginx/php-fpm/
 
 sudo service vesta restart
 
